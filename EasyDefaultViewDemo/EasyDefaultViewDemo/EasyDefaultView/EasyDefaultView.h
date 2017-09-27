@@ -7,7 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+typedef NS_ENUM(NSUInteger , defaultViewType) {
+    defaultViewTypeDefault ,
+    defaultViewTypeLoding ,
+    defaultViewTypeNoData ,
+    defaultViewTypeNetError ,
+};
 
 @interface EasyDefaultView : NSObject
+
+- (void)showDefaultViewWithTitle:(NSString *)title ;
+- (void)showDefaultViewWithTitle:(NSString *)title inView:(UIView *)view ;
+- (void)showDefaultViewWithTitle:(NSString *)title image:(UIImage *)image ;
 
 @end
