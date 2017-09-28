@@ -8,6 +8,18 @@
 
 #import "EasyDefaultView.h"
 
+@interface EasyDefaultView()
+
+@end
+
 @implementation EasyDefaultView
 
+- (void)showDefaultViewWithTitle:(NSString *)title
+{
+
+}
+- (void)showDefaultViewWithTitle:(NSString *)title image:(UIImage *)image
+{
+
+}
 @end
