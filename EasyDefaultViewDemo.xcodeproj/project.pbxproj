@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		683A887D2001258B0098B702 /* EasyDefaultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 683A887C2001258B0098B702 /* EasyDefaultView.m */; };
 		6841D8181F7A915C000057AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6841D8171F7A915C000057AA /* main.m */; };
 		6841D81B1F7A915C000057AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6841D81A1F7A915C000057AA /* AppDelegate.m */; };
 		6841D81E1F7A915C000057AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6841D81D1F7A915C000057AA /* ViewController.m */; };
@@ -15,7 +16,6 @@
 		6841D8261F7A915C000057AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6841D8241F7A915C000057AA /* LaunchScreen.storyboard */; };
 		6841D8311F7A915C000057AA /* EasyDefaultViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6841D8301F7A915C000057AA /* EasyDefaultViewDemoTests.m */; };
 		6841D83C1F7A915C000057AA /* EasyDefaultViewDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6841D83B1F7A915C000057AA /* EasyDefaultViewDemoUITests.m */; };
-		689F48F11FFFD9FD00AC1EE5 /* EasyDefaultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 689F48F01FFFD9FD00AC1EE5 /* EasyDefaultView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		683A887B2001258B0098B702 /* EasyDefaultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EasyDefaultView.h; path = EasyDefaultView/EasyDefaultView.h; sourceTree = "<group>"; };
+		683A887C2001258B0098B702 /* EasyDefaultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EasyDefaultView.m; path = EasyDefaultView/EasyDefaultView.m; sourceTree = "<group>"; };
 		6841D8131F7A915C000057AA /* EasyDefaultViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyDefaultViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6841D8171F7A915C000057AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6841D8191F7A915C000057AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -52,8 +54,6 @@
 		6841D8371F7A915C000057AA /* EasyDefaultViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyDefaultViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6841D83B1F7A915C000057AA /* EasyDefaultViewDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyDefaultViewDemoUITests.m; sourceTree = "<group>"; };
 		6841D83D1F7A915C000057AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		689F48EF1FFFD9FD00AC1EE5 /* EasyDefaultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyDefaultView.h; sourceTree = "<group>"; };
-		689F48F01FFFD9FD00AC1EE5 /* EasyDefaultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyDefaultView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,8 +147,8 @@
 		689F48EE1FFFD9FD00AC1EE5 /* EasyDefaultView */ = {
 			isa = PBXGroup;
 			children = (
-				689F48EF1FFFD9FD00AC1EE5 /* EasyDefaultView.h */,
-				689F48F01FFFD9FD00AC1EE5 /* EasyDefaultView.m */,
+				683A887B2001258B0098B702 /* EasyDefaultView.h */,
+				683A887C2001258B0098B702 /* EasyDefaultView.m */,
 			);
 			name = EasyDefaultView;
 			path = ../../EasyDefaultView;
@@ -292,7 +292,7 @@
 			files = (
 				6841D81E1F7A915C000057AA /* ViewController.m in Sources */,
 				6841D81B1F7A915C000057AA /* AppDelegate.m in Sources */,
-				689F48F11FFFD9FD00AC1EE5 /* EasyDefaultView.m in Sources */,
+				683A887D2001258B0098B702 /* EasyDefaultView.m in Sources */,
 				6841D8181F7A915C000057AA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
