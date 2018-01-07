@@ -23,26 +23,8 @@ typedef NS_ENUM(NSUInteger , defaultViewType) {
 
 @interface EasyDefaultView : UIView
 
-+ (void)defaultLodingViewInView:(UIView *)superView ;
-
-+ (void)defaultLodingViewWithTitle:(NSString *)title
-                            inView:(UIView *)superView ;
-
-+ (void)defaultLodingViewWithTitle:(NSString *)title
-                       tapCallback:(defaultViewTap)tapCallback
-                            inView:(UIView *)superView ;
-
-
-+ (void)defaultNoDataViewInView:(UIView *)superView ;
-
-+ (void)defaultNoDataViewWithTitle:(NSString *)title
-                            inView:(UIView *)superView ;
-
-+ (void)defaultNoDataViewWithTitle:(NSString *)title
-                       tapCallback:(defaultViewTap)tapCallback
-                            inView:(UIView *)superView ;
-
-
++ (void)defaultViewWithType:(defaultViewType)type
+                     inView:(UIView *)superView ;
 
 + (void)defaultViewWithTile:(NSString *)title
                        type:(defaultViewType)type
@@ -55,7 +37,7 @@ typedef NS_ENUM(NSUInteger , defaultViewType) {
 + (void)defaultViewWithTile:(NSString *)title
                        type:(defaultViewType)type
                      inView:(UIView *)superView
-                tapCallback:(defaultViewTap)tapCallback;
+                tapCallback:(defaultViewTap)tapCallback ;
 
 + (void)defaultViewWithTile:(NSString *)title
                   imageName:(NSString *)imageName

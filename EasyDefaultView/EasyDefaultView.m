@@ -26,7 +26,7 @@
 @property (nonatomic,strong)UIImageView *defaultImageView ;
 @property (nonatomic,strong)UIButton *defaultButton ;
 
-
+@property (nonatomic,strong)defaultViewButtonClick
 @property (nonatomic,strong)EasyDefaultOptions *options ;
 
 @end
