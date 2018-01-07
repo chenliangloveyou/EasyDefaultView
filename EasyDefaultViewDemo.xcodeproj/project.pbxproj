@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		683A887D2001258B0098B702 /* EasyDefaultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 683A887C2001258B0098B702 /* EasyDefaultView.m */; };
+		683A888320024E320098B702 /* EasyDefaultOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 683A888220024E320098B702 /* EasyDefaultOptions.m */; };
+		683A888A200252010098B702 /* EasyDefaultUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 683A8888200252010098B702 /* EasyDefaultUtils.m */; };
+		683A888D200266FA0098B702 /* UIView+EasyShowExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 683A888B200266FA0098B702 /* UIView+EasyShowExt.m */; };
+		683A8890200267FC0098B702 /* netError.png in Resources */ = {isa = PBXBuildFile; fileRef = 683A888E200267FC0098B702 /* netError.png */; };
+		683A8891200267FC0098B702 /* netError@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 683A888F200267FC0098B702 /* netError@2x.png */; };
 		6841D8181F7A915C000057AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6841D8171F7A915C000057AA /* main.m */; };
 		6841D81B1F7A915C000057AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6841D81A1F7A915C000057AA /* AppDelegate.m */; };
 		6841D81E1F7A915C000057AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6841D81D1F7A915C000057AA /* ViewController.m */; };
@@ -38,6 +43,15 @@
 /* Begin PBXFileReference section */
 		683A887B2001258B0098B702 /* EasyDefaultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EasyDefaultView.h; path = EasyDefaultView/EasyDefaultView.h; sourceTree = "<group>"; };
 		683A887C2001258B0098B702 /* EasyDefaultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EasyDefaultView.m; path = EasyDefaultView/EasyDefaultView.m; sourceTree = "<group>"; };
+		683A888120024E320098B702 /* EasyDefaultOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EasyDefaultOptions.h; path = EasyDefaultView/EasyDefaultOptions.h; sourceTree = "<group>"; };
+		683A888220024E320098B702 /* EasyDefaultOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EasyDefaultOptions.m; path = EasyDefaultView/EasyDefaultOptions.m; sourceTree = "<group>"; };
+		683A8887200251E10098B702 /* EasyDefault.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyDefault.h; sourceTree = "<group>"; };
+		683A8888200252010098B702 /* EasyDefaultUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EasyDefaultUtils.m; path = EasyDefaultView/EasyDefaultUtils.m; sourceTree = "<group>"; };
+		683A8889200252010098B702 /* EasyDefaultUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EasyDefaultUtils.h; path = EasyDefaultView/EasyDefaultUtils.h; sourceTree = "<group>"; };
+		683A888B200266FA0098B702 /* UIView+EasyShowExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EasyShowExt.m"; sourceTree = "<group>"; };
+		683A888C200266FA0098B702 /* UIView+EasyShowExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EasyShowExt.h"; sourceTree = "<group>"; };
+		683A888E200267FC0098B702 /* netError.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = netError.png; sourceTree = "<group>"; };
+		683A888F200267FC0098B702 /* netError@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "netError@2x.png"; sourceTree = "<group>"; };
 		6841D8131F7A915C000057AA /* EasyDefaultViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyDefaultViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6841D8171F7A915C000057AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6841D8191F7A915C000057AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -147,8 +161,17 @@
 		689F48EE1FFFD9FD00AC1EE5 /* EasyDefaultView */ = {
 			isa = PBXGroup;
 			children = (
+				683A8887200251E10098B702 /* EasyDefault.h */,
 				683A887B2001258B0098B702 /* EasyDefaultView.h */,
 				683A887C2001258B0098B702 /* EasyDefaultView.m */,
+				683A888120024E320098B702 /* EasyDefaultOptions.h */,
+				683A888220024E320098B702 /* EasyDefaultOptions.m */,
+				683A8889200252010098B702 /* EasyDefaultUtils.h */,
+				683A8888200252010098B702 /* EasyDefaultUtils.m */,
+				683A888C200266FA0098B702 /* UIView+EasyShowExt.h */,
+				683A888B200266FA0098B702 /* UIView+EasyShowExt.m */,
+				683A888E200267FC0098B702 /* netError.png */,
+				683A888F200267FC0098B702 /* netError@2x.png */,
 			);
 			name = EasyDefaultView;
 			path = ../../EasyDefaultView;
@@ -263,7 +286,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				683A8890200267FC0098B702 /* netError.png in Resources */,
 				6841D8261F7A915C000057AA /* LaunchScreen.storyboard in Resources */,
+				683A8891200267FC0098B702 /* netError@2x.png in Resources */,
 				6841D8231F7A915C000057AA /* Assets.xcassets in Resources */,
 				6841D8211F7A915C000057AA /* Main.storyboard in Resources */,
 			);
@@ -291,6 +316,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6841D81E1F7A915C000057AA /* ViewController.m in Sources */,
+				683A888D200266FA0098B702 /* UIView+EasyShowExt.m in Sources */,
+				683A888A200252010098B702 /* EasyDefaultUtils.m in Sources */,
+				683A888320024E320098B702 /* EasyDefaultOptions.m in Sources */,
 				6841D81B1F7A915C000057AA /* AppDelegate.m in Sources */,
 				683A887D2001258B0098B702 /* EasyDefaultView.m in Sources */,
 				6841D8181F7A915C000057AA /* main.m in Sources */,

@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#import "EasyDefault.h"
+
 @interface ViewController ()
 
 @end
@@ -16,6 +18,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIView *redView = [[UIView alloc]initWithFrame:CGRectMake(50, 100, 300, 300)];
+    redView.backgroundColor = [UIColor redColor ];
+    [self.view addSubview:redView];
+    [EasyDefaultView defaultViewWithType:defaultViewTypeNoData inView:redView];
+    
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
