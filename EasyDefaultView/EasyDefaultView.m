@@ -9,6 +9,7 @@
 #import "EasyDefaultView.h"
 #import "EasyDefaultOptions.h"
 #import "EasyDefaultUtils.h"
+#import "EasyShowLabel.h"
 #import "UIView+EasyShowExt.h"
 
 @interface EasyDefaultView()
@@ -223,16 +224,19 @@
    
     if (!ISEMPTY_D(self.defaultTitle)) {
         self.defaultTitleLabel.text = self.defaultTitle ;
-        self.defaultTitleLabel.frame = CGRectMake(0, contentHeight, contentWidth, 30);
         
-        contentHeight += self.defaultTitleLabel.height ;
+        CGSize titleLabelSize = [self.defaultTitleLabel sizeThatFits:CGSizeMake(contentWidth, MAXFLOAT)];
+        self.defaultTitleLabel.frame = CGRectMake(0, contentHeight, contentWidth, titleLabelSize.height);
 
+        contentHeight += self.defaultTitleLabel.height ;
     }
     
     if (!ISEMPTY_D(self.defaultSubTitle)) {
         self.defaultSubTitleLabel.text = self.defaultSubTitle ;
-        self.defaultSubTitleLabel.frame = CGRectMake(0, contentHeight, contentWidth, 50) ;
-  
+        
+        CGSize titleLabelSize = [self.defaultSubTitleLabel sizeThatFits:CGSizeMake(contentWidth, MAXFLOAT)];
+        self.defaultSubTitleLabel.frame = CGRectMake(0, contentHeight, contentWidth, titleLabelSize.height);
+        
         contentHeight += self.defaultSubTitleLabel.height ;
 
     }
@@ -294,8 +298,9 @@
 - (UILabel *)defaultSubTitleLabel
 {
     if (nil == _defaultSubTitleLabel) {
-        _defaultSubTitleLabel = [[UILabel alloc]init];
+        _defaultSubTitleLabel =  [[EasyShowLabel alloc] initWithContentInset:UIEdgeInsetsMake(15, 0, 15, 0)];
         _defaultSubTitleLabel.textColor = [UIColor grayColor];
+        _defaultSubTitleLabel.numberOfLines = 0 ;
         _defaultSubTitleLabel.textAlignment = NSTextAlignmentCenter ;
     }
     return _defaultSubTitleLabel ;
@@ -303,8 +308,10 @@
 - (UILabel *)defaultTitleLabel
 {
     if (nil == _defaultTitleLabel) {
-        _defaultTitleLabel = [[UILabel alloc]init];
+        _defaultTitleLabel = [[EasyShowLabel alloc] initWithContentInset:UIEdgeInsetsMake(15, 0, 15, 0)];;
         _defaultTitleLabel.textColor = [UIColor blackColor];
+        _defaultTitleLabel.numberOfLines = 0 ;
+//        _defaultTitleLabel.backgroundColor = [UIColor blueColor];
         _defaultTitleLabel.textAlignment = NSTextAlignmentCenter ;
     }
     return _defaultTitleLabel ;
