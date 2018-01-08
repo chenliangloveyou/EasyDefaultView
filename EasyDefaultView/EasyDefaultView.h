@@ -21,7 +21,7 @@ typedef NS_ENUM(NSUInteger , defaultViewType) {
 //    defaultViewTypeCustom ,
 };
 
-@interface EasyDefaultView : UIView
+@interface EasyDefaultView : UIScrollView
 
 + (void)defaultViewWithType:(defaultViewType)type
                      inView:(UIView *)superView ;

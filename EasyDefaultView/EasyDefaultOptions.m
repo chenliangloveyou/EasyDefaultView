@@ -42,7 +42,7 @@ static EasyDefaultOptions *_showInstance;
     if (self = [super init]) {
         
         _noDataTitle = @"无数据";
-        _noDataSubTitle = @"您没有血压数据";
+//        _noDataSubTitle = @"您没有血压数据";
         _noDataImageName = @"netError.png";
         _noDataButtonTitle = @"重新加载";
 //        @property (nonatomic,strong)NSString *LodingTitle ;

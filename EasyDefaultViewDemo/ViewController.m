@@ -23,14 +23,20 @@
     redView.backgroundColor = [UIColor redColor ];
     [self.view addSubview:redView];
     [EasyDefaultView defaultViewWithType:defaultViewTypeNoData inView:redView tapCallback:^(EasyDefaultView *view) {
-        [view removeFromSuperview];
+        [EasyDefaultView defaultViewHiddenInView:redView];
     }];
     
-    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bgContentViewTap)];
+    [self.view addGestureRecognizer:tapGesture];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-
+- (void)bgContentViewTap
+{
+    [EasyDefaultView defaultViewWithType:defaultViewTypeNoData inView:self.view tapCallback:^(EasyDefaultView *view) {
+        [EasyDefaultView defaultViewHiddenInView:self.view];
+    }];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

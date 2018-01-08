@@ -12,18 +12,8 @@
 
 @interface EasyDefaultOptions : NSObject
 
-//typedef NS_ENUM(NSUInteger , defaultViewType) {
-//    defaultViewTypeDefault ,
-//    defaultViewTypeLoding ,
-//    defaultViewTypeNoData ,
-//    defaultViewTypeNetError ,
-//};
-//+ (void)defaultViewWithTile:(NSString *)title
-//                   subTitle:(NSString *)subTitle
-//                  imageName:(NSString *)imageName
-//                buttonTitle:(NSString *)buttonTitle
-//                       type:(defaultViewType)type
-//                     inView:(UIView *)superView ;
+//@property (nonatomic,strong)
+
 @property (nonatomic,strong)NSString *LodingTitle ;
 @property (nonatomic,strong)NSString *lodingSubTitle ;
 @property (nonatomic,strong)NSString *lodingImageName ;

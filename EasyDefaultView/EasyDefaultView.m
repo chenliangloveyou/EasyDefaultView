@@ -19,14 +19,15 @@
 @property (nonatomic,strong)NSString *defaultButtonTitle ;
 @property (nonatomic,assign)defaultViewType defaultType ;
 
-@property (nonatomic,strong)UIScrollView *bgScrollView ;
-
+@property (nonatomic,strong)UIView *bgContentView ;
 @property (nonatomic,strong)UILabel *defaultTitleLabel ;
 @property (nonatomic,strong)UILabel *defaultSubTitleLabel ;
 @property (nonatomic,strong)UIImageView *defaultImageView ;
 @property (nonatomic,strong)UIButton *defaultButton ;
 
-@property (nonatomic,strong)defaultViewButtonClick
+@property (nonatomic,strong)defaultViewTap defaultViewTap ;
+@property (nonatomic,strong)defaultViewButtonClick defaultViewButtonClick ;
+
 @property (nonatomic,strong)EasyDefaultOptions *options ;
 
 @end
@@ -152,6 +153,8 @@
     defaultView.defaultImageName = imageName ;
     defaultView.defaultButtonTitle = buttonTitle ;
     defaultView.defaultType = type ;
+    defaultView.defaultViewTap = tapCallback ;
+    defaultView.defaultViewButtonClick = buttonClick ;
     [defaultView showViewWithSuperView:superView];
 
 }
@@ -169,8 +172,11 @@
                 });
             }
             
-            [subview.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-            [subview removeFromSuperview];
+            [UIView animateWithDuration:.3 animations:^{
+                subview.alpha = 0.2 ;
+            } completion:^(BOOL finished) {
+                [subview removeFromSuperview];
+            }] ;
         }
     }
 }
@@ -178,49 +184,94 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = [UIColor blueColor] ;
-        [self addSubview:self.bgScrollView];
+        self.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight ;
+//        self.backgroundColor = [UIColor purpleColor];
+        self.alwaysBounceVertical = YES ;
     }
     return self ;
 }
-
+- (void)bgContentViewTap
+{
+    if (self.defaultViewTap) {
+        self.defaultViewTap(self);
+    }
+}
 - (void)showViewWithSuperView:(UIView *)superView
 {
-    self.frame = CGRectMake(0, 0, superView.frame.size.width, superView.frame.size.height) ;
     
+    if (self.defaultViewTap) {
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bgContentViewTap)];
+        [self addGestureRecognizer:tapGesture];
+    }
+   
+    self.frame = CGRectMake(0, 0, superView.width, superView.height) ;
     
-    [self.bgScrollView addSubview:self.defaultImageView];
-    UIImage *defaultImage = [UIImage imageNamed:self.defaultImageName];
-    self.defaultImageView.image = defaultImage ;
-    self.defaultImageView.frame = CGRectMake((self.width-defaultImage.size.width)/2, 10, defaultImage.size.width, defaultImage.size.height) ;
+    [self addSubview:self.bgContentView];
+
+   
+    CGFloat contentWidth = superView.width*0.7 ;//计算bgcontentview的宽度
+    if (contentWidth < 200) {    //如果superview的宽度小于200 就应该是全部宽度
+        contentWidth = superView.width ;
+    }
+    CGFloat contentHeight = 0 ;//计算bgcontentview的高度
+    if (!ISEMPTY_D(self.defaultImageName)) {
+        UIImage *defaultImage = [UIImage imageNamed:self.defaultImageName];
+        self.defaultImageView.image = defaultImage ;
+        self.defaultImageView.frame = CGRectMake((contentWidth-defaultImage.size.width)/2, contentHeight, defaultImage.size.width, defaultImage.size.height) ;
+        contentHeight += defaultImage.size.height ;
+    }
+   
+    if (!ISEMPTY_D(self.defaultTitle)) {
+        self.defaultTitleLabel.text = self.defaultTitle ;
+        self.defaultTitleLabel.frame = CGRectMake(0, contentHeight, contentWidth, 30);
+        
+        contentHeight += self.defaultTitleLabel.height ;
+
+    }
     
-    [self.bgScrollView addSubview:self.defaultTitleLabel];
-    self.defaultTitleLabel.text = self.defaultTitle ;
-    self.defaultTitleLabel.frame = CGRectMake(0, self.defaultImageView.bottom+20, superView.frame.size.width, 30);
+    if (!ISEMPTY_D(self.defaultSubTitle)) {
+        self.defaultSubTitleLabel.text = self.defaultSubTitle ;
+        self.defaultSubTitleLabel.frame = CGRectMake(0, contentHeight, contentWidth, 50) ;
+  
+        contentHeight += self.defaultSubTitleLabel.height ;
+
+    }
     
-    [self.bgScrollView addSubview:self.defaultSubTitleLabel];
-    self.defaultSubTitleLabel.text = self.defaultSubTitle ;
-    self.defaultSubTitleLabel.frame = CGRectMake(0, self.defaultTitleLabel.bottom, superView.width, 50) ;
-    
-    [self.bgScrollView addSubview:self.defaultButton];
-    [self.defaultButton setTitle:self.defaultButtonTitle forState:UIControlStateNormal];
-    [self.defaultButton setFrame:CGRectMake((self.width-100)/2, self.defaultSubTitleLabel.bottom+20, 100, 40)];
-    
+    if (!ISEMPTY_D(self.defaultButtonTitle)) {
+        [self.defaultButton setTitle:self.defaultButtonTitle forState:UIControlStateNormal];
+        [self.defaultButton setFrame:CGRectMake((contentWidth-100)/2, contentHeight, 100, 40)];
+  
+        contentHeight += self.defaultButton.height ;
+
+    }
+   
+    self.bgContentView.frame = CGRectMake((superView.width-contentWidth)/2, (self.height-contentHeight)/2, contentWidth, contentHeight) ;
+
     [superView addSubview:self];
+    self.alpha = 0.2 ;
+    [UIView animateWithDuration:0.3 animations:^{
+        self.alpha = 1 ;
+    }] ;
+    
 }
 - (void)defaultButtonClick
 {
     
 }
-- (UIScrollView *)bgScrollView
+
+- (UIView *)bgContentView
 {
-    if (nil == _bgScrollView) {
-        _bgScrollView = [[UIScrollView alloc]initWithFrame:self.bounds];
-        _bgScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight ;
-        _bgScrollView.backgroundColor = [UIColor purpleColor];
-        _bgScrollView.alwaysBounceVertical = YES ;
+    if (nil == _bgContentView) {
+        _bgContentView = [[UIView alloc]init];
+        _bgContentView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight ;
+//        _bgContentView.backgroundColor = [UIColor blueColor];
+        
+        [_bgContentView addSubview:self.defaultImageView];
+        [_bgContentView addSubview:self.defaultTitleLabel];
+        [_bgContentView addSubview:self.defaultSubTitleLabel];
+        [_bgContentView addSubview:self.defaultButton];
     }
-    return _bgScrollView ;
+    return _bgContentView ;
 }
 - (UIButton *)defaultButton
 {
@@ -236,7 +287,7 @@
 {
     if (nil == _defaultImageView) {
         _defaultImageView = [[UIImageView alloc]init];
-        _defaultImageView.backgroundColor = [UIColor lightGrayColor];
+//        _defaultImageView.backgroundColor = [UIColor lightGrayColor];
     }
     return _defaultImageView ;
 }
