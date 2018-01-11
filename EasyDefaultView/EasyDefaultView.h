@@ -11,8 +11,11 @@
 
 @class EasyDefaultView ;
 
-typedef void (^defaultViewTap)(EasyDefaultView *view);
-typedef void (^defaultViewButtonClick)(EasyDefaultView *view , UIButton *button);
+typedef NS_ENUM(NSUInteger , callbackType) {
+    callbackTypeBgView ,
+    callbackTypeButton_1 ,
+    callbackTypeButton_2 ,
+};
 
 typedef NS_ENUM(NSUInteger , defaultViewType) {
     defaultViewTypeLoding ,
@@ -21,51 +24,48 @@ typedef NS_ENUM(NSUInteger , defaultViewType) {
 //    defaultViewTypeCustom ,
 };
 
+typedef void (^defaultViewCallback)(EasyDefaultView *view , UIButton *button , callbackType callbackType);
+
 @interface EasyDefaultView : UIScrollView
 
-+ (void)defaultViewWithType:(defaultViewType)type
-                     inView:(UIView *)superView ;
-
-+ (void)defaultViewWithTile:(NSString *)title
-                       type:(defaultViewType)type
-                     inView:(UIView *)superView ;
 
 + (void)defaultViewWithType:(defaultViewType)type
-                     inView:(UIView *)superView
-                tapCallback:(defaultViewTap)tapCallback;
+                     inview:(UIView *)superView
+                      title:(NSString *)title ;
 
-+ (void)defaultViewWithTile:(NSString *)title
-                       type:(defaultViewType)type
-                     inView:(UIView *)superView
-                tapCallback:(defaultViewTap)tapCallback ;
++ (void)defaultViewWithType:(defaultViewType)type
+                     inview:(UIView *)superView
+                      imageName:(NSString *)imageName ;
 
-+ (void)defaultViewWithTile:(NSString *)title
-                  imageName:(NSString *)imageName
-                       type:(defaultViewType)type
-                     inView:(UIView *)superView ;
++ (void)defaultViewWithType:(defaultViewType)type
+                     inview:(UIView *)superView
+                      title:(NSString *)title
+                   subTitle:(NSString *)subTitle ;
 
-+ (void)defaultViewWithTile:(NSString *)title
++ (void)defaultViewWithType:(defaultViewType)type
+                     inview:(UIView *)superView
+                      title:(NSString *)title
                    subTitle:(NSString *)subTitle
-                       type:(defaultViewType)type
-                     inView:(UIView *)superView ;
+                  imageName:(NSString *)imageName ;
 
-+ (void)defaultViewWithTile:(NSString *)title
-                   subTitle:(NSString *)subTitle
-                  imageName:(NSString *)imageName
-                       type:(defaultViewType)type
-                     inView:(UIView *)superView ;
-
-+ (void)defaultViewWithTile:(NSString *)title
++ (void)defaultViewWithType:(defaultViewType)type
+                     inview:(UIView *)superView
+                      title:(NSString *)title
                    subTitle:(NSString *)subTitle
                   imageName:(NSString *)imageName
-                buttonTitle:(NSString *)buttonTitle
-                       type:(defaultViewType)type
-                     inView:(UIView *)superView
-                tapCallback:(defaultViewTap)tapCallback
-        buttonClickCallback:(defaultViewButtonClick)buttonClick;
+                   callback:(defaultViewCallback)callback;
+
++ (void)defaultViewWithType:(defaultViewType)type
+                     inview:(UIView *)superView
+                      title:(NSString *)title
+                   subTitle:(NSString *)subTitle
+                  imageName:(NSString *)imageName
+           buttonTitleArray:(NSArray *)buttonTitleArray
+                   callback:(defaultViewCallback)callback;
 
 
-+ (void)defaultViewHiddenInView:(UIView *)superView ;
+
++ (void)hiddenInView:(UIView *)superView ;
 
 @end
 
