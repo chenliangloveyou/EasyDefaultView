@@ -17,12 +17,12 @@ typedef NS_ENUM(NSUInteger , callbackType) {
     callbackTypeButton_2 = 2,
 };
 
-typedef NS_ENUM(NSUInteger , defaultViewType) {
-    defaultViewTypeLoding ,
-    defaultViewTypeNoData ,
-    defaultViewTypeNetError ,
-//    defaultViewTypeCustom ,
-};
+//typedef NS_ENUM(NSUInteger , defaultViewType) {
+//    defaultViewTypeLoding ,
+//    defaultViewTypeNoData ,
+//    defaultViewTypeNetError ,
+////    defaultViewTypeCustom ,
+//};
 
 typedef void (^defaultViewCallback)(EasyDefaultView *view , UIButton *button , callbackType callbackType);
 
@@ -32,38 +32,32 @@ typedef void (^defaultViewCallback)(EasyDefaultView *view , UIButton *button , c
 + (instancetype)defaultViewWithDict:(NSDictionary *)dict
                            callback:(defaultViewCallback)callback ;
 
-+ (void)defaultViewWithType:(defaultViewType)type
-                     inview:(UIView *)superView
-                      title:(NSString *)title ;
++ (void)defaultViewWithTitle:(NSString *)title
+                      inview:(UIView *)superView;
 
-+ (void)defaultViewWithType:(defaultViewType)type
-                     inview:(UIView *)superView
-                      imageName:(NSString *)imageName ;
++ (void)defaultViewWithImageName:(NSString *)imageName
+                          inview:(UIView *)superView ;
 
-+ (void)defaultViewWithType:(defaultViewType)type
-                     inview:(UIView *)superView
-                      title:(NSString *)title
-                   subTitle:(NSString *)subTitle ;
-
-+ (void)defaultViewWithType:(defaultViewType)type
-                     inview:(UIView *)superView
-                      title:(NSString *)title
++ (void)defaultViewWithTitle:(NSString *)title
                    subTitle:(NSString *)subTitle
-                  imageName:(NSString *)imageName ;
+                      inview:(UIView *)superView  ;
 
-+ (void)defaultViewWithType:(defaultViewType)type
-                     inview:(UIView *)superView
-                      title:(NSString *)title
++ (void)defaultViewWithtitle:(NSString *)title
+                    subTitle:(NSString *)subTitle
+                   imageName:(NSString *)imageName
+                      inview:(UIView *)superView;
+
++ (void)defaultViewWithTitle:(NSString *)title
                    subTitle:(NSString *)subTitle
                   imageName:(NSString *)imageName
+                     inview:(UIView *)superView
                    callback:(defaultViewCallback)callback;
 
-+ (void)defaultViewWithType:(defaultViewType)type
-                     inview:(UIView *)superView
-                      title:(NSString *)title
++ (void)defaultViewWithTitle:(NSString *)title
                    subTitle:(NSString *)subTitle
                   imageName:(NSString *)imageName
            buttonTitleArray:(NSArray *)buttonTitleArray
+                     inview:(UIView *)superView
                    callback:(defaultViewCallback)callback;
 
 

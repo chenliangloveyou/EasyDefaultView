@@ -8,6 +8,13 @@
 
 #import "EasyDefaultOptions.h"
 
+NSString *const EasyDefaultTypeKey = @"EasyDefaultTypeKey" ; ;
+NSString *const EasyDefaultSuperViewKey = @"EasyDefaultSuperViewKey" ; //当EasyShowView消失的时候会发送此通知。
+NSString *const EasyDefaultTitleKey = @"EasyDefaultTitleKey" ;
+NSString *const EasyDefaultSubTitleKey = @"EasyDefaultSubTitleKey" ;
+NSString *const EasyDefaultImageNameKey = @"EasyDefaultImageNameKey" ;
+NSString *const EasyDefaultButtonTitleArrayKey = @"EasyDefaultButtonTitleArrayKey" ;
+
 @implementation EasyDefaultOptions
 
 
@@ -41,13 +48,15 @@ static EasyDefaultOptions *_showInstance;
 {
     if (self = [super init]) {
         
+        _defaultViewBgColor = [UIColor groupTableViewBackgroundColor] ;
+        
         _titleFount = [UIFont systemFontOfSize:18];
         _titleColor = [UIColor blackColor];
         
         _subTitleFount = [UIFont systemFontOfSize:15];
         _subTitleColor = [UIColor lightGrayColor] ;
         
-        _buttonFount = [UIFont systemFontOfSize:16];
+        _buttonFount = [UIFont systemFontOfSize:14];
         _buttonColor = [UIColor darkTextColor];
         _buttonBackgroundColor = [UIColor lightGrayColor];
         _buttonEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
