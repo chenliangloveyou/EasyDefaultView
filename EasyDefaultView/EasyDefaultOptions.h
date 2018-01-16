@@ -13,7 +13,6 @@
 #define kSharedEasyDefaultOptions [EasyDefaultOptions sharedEasyDefaultOptions]
 
 
-extern NSString *const EasyDefaultTypeKey ;
 extern NSString *const EasyDefaultSuperViewKey ; //当EasyShowView消失的时候会发送此通知。
 extern NSString *const EasyDefaultTitleKey ;
 extern NSString *const EasyDefaultSubTitleKey  ;

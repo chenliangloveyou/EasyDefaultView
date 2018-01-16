@@ -39,7 +39,7 @@ typedef void (^defaultViewCallback)(EasyDefaultView *view , UIButton *button , c
                           inview:(UIView *)superView ;
 
 + (void)defaultViewWithTitle:(NSString *)title
-                   subTitle:(NSString *)subTitle
+                    subTitle:(NSString *)subTitle
                       inview:(UIView *)superView  ;
 
 + (void)defaultViewWithtitle:(NSString *)title
@@ -48,19 +48,25 @@ typedef void (^defaultViewCallback)(EasyDefaultView *view , UIButton *button , c
                       inview:(UIView *)superView;
 
 + (void)defaultViewWithTitle:(NSString *)title
-                   subTitle:(NSString *)subTitle
-                  imageName:(NSString *)imageName
-                     inview:(UIView *)superView
-                   callback:(defaultViewCallback)callback;
+                    subTitle:(NSString *)subTitle
+                   imageName:(NSString *)imageName
+                      inview:(UIView *)superView
+                    callback:(defaultViewCallback)callback;
 
 + (void)defaultViewWithTitle:(NSString *)title
-                   subTitle:(NSString *)subTitle
-                  imageName:(NSString *)imageName
-           buttonTitleArray:(NSArray *)buttonTitleArray
-                     inview:(UIView *)superView
-                   callback:(defaultViewCallback)callback;
+                    subTitle:(NSString *)subTitle
+                   imageName:(NSString *)imageName
+            buttonTitleArray:(NSArray *)buttonTitleArray
+                      inview:(UIView *)superView
+                    callback:(defaultViewCallback)callback;
 
 
+
++ (void)defaultViewLodingWithTitle:(NSString *)title
+                          callback:(defaultViewCallback)callback ;
+
++ (void)defaultViewLodingWithImageName:(NSString *)imageName
+                              callback:(defaultViewCallback)callback ;
 
 + (void)hiddenInView:(UIView *)superView ;
 

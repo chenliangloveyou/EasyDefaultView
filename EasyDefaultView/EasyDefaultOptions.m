@@ -8,7 +8,6 @@
 
 #import "EasyDefaultOptions.h"
 
-NSString *const EasyDefaultTypeKey = @"EasyDefaultTypeKey" ; ;
 NSString *const EasyDefaultSuperViewKey = @"EasyDefaultSuperViewKey" ; //当EasyShowView消失的时候会发送此通知。
 NSString *const EasyDefaultTitleKey = @"EasyDefaultTitleKey" ;
 NSString *const EasyDefaultSubTitleKey = @"EasyDefaultSubTitleKey" ;
