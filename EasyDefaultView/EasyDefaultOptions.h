@@ -7,27 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 
 #define kSharedEasyDefaultOptions [EasyDefaultOptions sharedEasyDefaultOptions]
 
 @interface EasyDefaultOptions : NSObject
 
-//@property (nonatomic,strong)
+@property (nonatomic,strong)UIFont *titleFount ;
+@property (nonatomic,strong)UIColor *titleColor ;
 
-@property (nonatomic,strong)NSString *LodingTitle ;
-@property (nonatomic,strong)NSString *lodingSubTitle ;
-@property (nonatomic,strong)NSString *lodingImageName ;
-@property (nonatomic,strong)NSString *lodingButtonTitle ;
+@property (nonatomic,strong)UIFont *subTitleFount ;
+@property (nonatomic,strong)UIColor *subTitleColor ;
 
-@property (nonatomic,strong)NSString *noDataTitle ;
-@property (nonatomic,strong)NSString *noDataSubTitle ;
-@property (nonatomic,strong)NSString *noDataImageName ;
-@property (nonatomic,strong)NSString *noDataButtonTitle ;
-
-@property (nonatomic,strong)NSString *netErrorTitle ;
-@property (nonatomic,strong)NSString *netErrorSubTitle ;
-@property (nonatomic,strong)NSString *netErrorImageName ;
-@property (nonatomic,strong)NSString *netErrorButtonTitle ;
+@property (nonatomic,strong)UIFont *buttonFount ;
+@property (nonatomic,strong)UIColor *buttonColor ;
+@property (nonatomic,strong)UIColor *buttonBackgroundColor ;
+//按钮往内缩的边距（按钮四边边缘距离文字的距离）
+@property (nonatomic,assign)UIEdgeInsets buttonEdgeInsets ;
 
 + (instancetype)sharedEasyDefaultOptions ;
 

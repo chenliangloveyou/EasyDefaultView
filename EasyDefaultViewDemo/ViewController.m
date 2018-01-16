@@ -25,8 +25,9 @@
     [EasyDefaultView defaultViewWithType:defaultViewTypeNoData
                                   inview:redView
                                    title:@"无数据"
-                                subTitle:@"点击刷新，重新获取数据..."
+                                subTitle:@"点击刷新，重新获取数据，将会为您重新加载!"
                                imageName:@"netError.png"
+                        buttonTitleArray:@[@"回主页发链接"]
                                 callback:^(EasyDefaultView *view, UIButton *button, callbackType callbackType) {
                                     [EasyDefaultView hiddenInView:redView];
                                 }];
@@ -38,7 +39,7 @@
 
 - (void)bgContentViewTap
 {
-    [EasyDefaultView defaultViewWithType:defaultViewTypeNetError inview:self.view title:@"网络错误" subTitle:@"请检查网络是否连接正常" imageName:@"noNetFlags.png" buttonTitleArray:@[@"回主页"] callback:^(EasyDefaultView *view, UIButton *button, callbackType callbackType) {
+    [EasyDefaultView defaultViewWithType:defaultViewTypeNetError inview:self.view title:@"网络错误" subTitle:@"请检查网络是\n否连接正常" imageName:@"noNetFlags.png" buttonTitleArray:@[@"回主页",@"再次弗利萨解放路发了f刷新"] callback:^(EasyDefaultView *view, UIButton *button, callbackType callbackType) {
         [EasyDefaultView hiddenInView:self.view];
     }];
  

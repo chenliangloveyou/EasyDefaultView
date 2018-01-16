@@ -41,26 +41,16 @@ static EasyDefaultOptions *_showInstance;
 {
     if (self = [super init]) {
         
-        _noDataTitle = @"无数据";
-//        _noDataSubTitle = @"您没有血压数据";
-        _noDataImageName = @"netError.png";
-        _noDataButtonTitle = @"重新加载";
-//        @property (nonatomic,strong)NSString *LodingTitle ;
-//        @property (nonatomic,strong)NSString *lodingSubTitle ;
-//        @property (nonatomic,strong)NSString *lodingImageName ;
-//        @property (nonatomic,strong)NSString *lodingButtonTitle ;
-//
-//        @property (nonatomic,strong)NSString *noDataTitle ;
-//        @property (nonatomic,strong)NSString *noDataSubTitle ;
-//        @property (nonatomic,strong)NSString *noDataImageName ;
-//        @property (nonatomic,strong)NSString *noDataButtonTitle ;
-//
-//        @property (nonatomic,strong)NSString *netErrorTitle ;
-//        @property (nonatomic,strong)NSString *netErrorSubTitle ;
-//        @property (nonatomic,strong)NSString *netErrorImageName ;
-//        @property (nonatomic,strong)NSString *netErrorButtonTitle ;
-
+        _titleFount = [UIFont systemFontOfSize:18];
+        _titleColor = [UIColor blackColor];
         
+        _subTitleFount = [UIFont systemFontOfSize:15];
+        _subTitleColor = [UIColor lightGrayColor] ;
+        
+        _buttonFount = [UIFont systemFontOfSize:16];
+        _buttonColor = [UIColor darkTextColor];
+        _buttonBackgroundColor = [UIColor lightGrayColor];
+        _buttonEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
     }
     return self ;
 }

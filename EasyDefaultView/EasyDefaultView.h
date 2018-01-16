@@ -12,9 +12,9 @@
 @class EasyDefaultView ;
 
 typedef NS_ENUM(NSUInteger , callbackType) {
-    callbackTypeBgView ,
-    callbackTypeButton_1 ,
-    callbackTypeButton_2 ,
+    callbackTypeBgView   = 0,
+    callbackTypeButton_1 = 1,
+    callbackTypeButton_2 = 2,
 };
 
 typedef NS_ENUM(NSUInteger , defaultViewType) {
@@ -28,6 +28,9 @@ typedef void (^defaultViewCallback)(EasyDefaultView *view , UIButton *button , c
 
 @interface EasyDefaultView : UIScrollView
 
+
++ (instancetype)defaultViewWithDict:(NSDictionary *)dict
+                           callback:(defaultViewCallback)callback ;
 
 + (void)defaultViewWithType:(defaultViewType)type
                      inview:(UIView *)superView
